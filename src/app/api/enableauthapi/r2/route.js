@@ -34,7 +34,7 @@ export async function POST(request) {
 
 	const formData = await request.formData();
 	const fileType = formData.get('file').type;
-	const filename = formData.get('file').name;
+	const filename = Date.now() + '_' + formData.get('file').name;
 	const file = formData.get('file');
 
 	const header = new Headers()
